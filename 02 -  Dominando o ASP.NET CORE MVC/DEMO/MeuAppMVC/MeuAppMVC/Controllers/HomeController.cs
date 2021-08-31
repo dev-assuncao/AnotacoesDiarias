@@ -8,13 +8,19 @@ using System.Threading.Tasks;
 
 namespace MeuAppMVC.Controllers
 {
+    [Route("gestao-clientes")]
     public class HomeController : Controller
     {
+        [Route("")]
+        [Route("pagina-inicial")]
+        [Route("pagina-nicial/{id:int}/{categoria:guid}")]
         public IActionResult Index(string id, string categoria)
         {
             return View();
         }
 
+        [Route("Privacidade")]
+        [Route("politica-de-privacidade")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
