@@ -8,36 +8,34 @@ using System.Threading.Tasks;
 
 namespace MeuAppMVC.Controllers
 {
-    [Route("gestao-clientes")]
     public class HomeController : Controller
     {
-        [Route("")]
-        [Route("pagina-inicial")]
-        [Route("pagina-nicial/{id:int}/{categoria:guid}")]
+
         public IActionResult Index(string id, string categoria)
         {
             return View();
         }
 
-        [Route("Privacidade")]
-        [Route("politica-de-privacidade")]
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            //return Json("{'nome':'Eduardo'}");
+
+            //var fileBytes = System.IO.File.ReadAllBytes(@"C:\Users\Davisson\Desktop\davisson.txt");
+            //var fileName = "ola.txt";
+            //return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+
+            return Content("Qualquer coisa");
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
