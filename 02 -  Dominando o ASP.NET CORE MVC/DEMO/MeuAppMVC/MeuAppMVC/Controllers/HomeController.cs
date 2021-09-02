@@ -11,9 +11,19 @@ namespace MeuAppMVC.Controllers
     public class HomeController : Controller
     {
 
-        public IActionResult Index(string id, string categoria)
+        public IActionResult Index()
         {
-            return View();
+            var filme = new Filme
+            {
+                Titulo = "Oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 20000
+            };
+
+            return RedirectToAction("Privacy", filme);
+            //return View();
         }
 
         public IActionResult About()
@@ -26,16 +36,19 @@ namespace MeuAppMVC.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
-            //return Json("{'nome':'Eduardo'}");
+            if (ModelState.IsValid)
+            {
 
-            //var fileBytes = System.IO.File.ReadAllBytes(@"C:\Users\Davisson\Desktop\davisson.txt");
-            //var fileName = "ola.txt";
-            //return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            }
 
-            return Content("Qualquer coisa");
+            foreach (var error in ModelState.Values.SelectMany(m => m.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
 
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
