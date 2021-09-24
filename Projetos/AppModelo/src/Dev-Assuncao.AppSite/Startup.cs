@@ -26,6 +26,7 @@ namespace Dev_Assuncao.AppSite
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseMvc(
