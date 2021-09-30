@@ -12,7 +12,5 @@ namespace Dev_Assuncao.AppSite.Controllers
         {
             return View();
         }
-
-
     }
 }
