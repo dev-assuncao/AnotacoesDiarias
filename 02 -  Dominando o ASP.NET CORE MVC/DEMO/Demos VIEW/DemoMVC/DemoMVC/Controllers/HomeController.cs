@@ -34,6 +34,20 @@ namespace DemoMVC.Controllers
             return View();
         }
 
+
+
+        public IActionResult Secret()
+        {
+            return View();
+        }
+
+        public IActionResult SecretClaim()
+        {
+            return View("Secret");
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
