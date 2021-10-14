@@ -50,6 +50,18 @@ namespace Dev_Assuncao.AppSite
                     routes.MapRoute(
                        name: "areas",
                        template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                    routes.MapAreaRoute(
+                        name: "AreaProdutos",
+                        areaName: "Produtos",
+                        template: "Produtos/{controller=Cadastro}/{action=Index}/{id?}" /*template= padrão*/
+                        );
+
+                    routes.MapAreaRoute(
+                        name: "AreaVendas",
+                        areaName: "Vendas",
+                        template: "Vendas/{controller=Pedidos}/{action=Index}/{id?}"
+                        );
                 });
         }
     }
