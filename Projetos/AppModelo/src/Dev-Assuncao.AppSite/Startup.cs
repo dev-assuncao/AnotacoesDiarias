@@ -30,7 +30,7 @@ namespace Dev_Assuncao.AppSite
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2);
 
 
-            services.AddTransient<IPedidoRepository, PedidoRepository>()
+            services.AddTransient<IPedidoRepository, PedidoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

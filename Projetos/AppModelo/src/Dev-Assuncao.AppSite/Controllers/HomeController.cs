@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Dev_Assuncao.AppSite.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,17 @@ namespace Dev_Assuncao.AppSite.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+
+        // private readonly IPedidoRepository _pedidoRepository;
+
+
+        //public HomeController(IPedidoRepository pedidoRepository)
+        //{
+        //_pedidoRepository = pedidoRepository;
+        //}
+        public IActionResult Index([FromServices] IPedidoRepository _pedidoRepository)
         {
+            var pedido = _pedidoRepository.ObterPedido();
             return View();
         }
     }
