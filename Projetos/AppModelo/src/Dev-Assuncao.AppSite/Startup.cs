@@ -39,7 +39,7 @@ namespace Dev_Assuncao.AppSite
             }
             );
 
-            services.AddDbContext<MeuDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString(name:"MeuDbContext"));
+            services.AddDbContext<MeuDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString(name:"MeuDbContext")));
 
 
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2);

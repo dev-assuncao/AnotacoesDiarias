@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Dev_Assuncao.AppSite.Models;
 
 namespace Dev_Assuncao.AppSite.Data
 {
@@ -10,5 +11,7 @@ namespace Dev_Assuncao.AppSite.Data
 
         }
 
+
+        public DbSet<Aluno> Alunos { get; set; }
     }
 }
