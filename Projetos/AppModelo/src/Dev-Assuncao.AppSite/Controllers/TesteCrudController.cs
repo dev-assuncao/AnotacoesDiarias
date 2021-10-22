@@ -40,7 +40,7 @@ namespace Dev_Assuncao.AppSite.Controllers
             _meuDbContext.Alunos.Remove(aluno);
             _meuDbContext.SaveChanges();
 
-            return View();
+            return View("_Layout");
         }
     }
 }
