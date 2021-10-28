@@ -18,6 +18,7 @@ namespace AspNetCoreIdentity.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
