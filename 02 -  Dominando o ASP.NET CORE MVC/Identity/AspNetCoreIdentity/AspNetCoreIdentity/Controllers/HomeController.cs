@@ -18,11 +18,18 @@ namespace AspNetCoreIdentity.Controllers
             return View();
         }
 
-        [AllowAnonymous]
+        
         public IActionResult Privacy()
         {
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Secret()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
