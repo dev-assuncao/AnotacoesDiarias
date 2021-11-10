@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreIdentity.Extensions;
 
 namespace AspNetCoreIdentity
 {
@@ -43,6 +44,14 @@ namespace AspNetCoreIdentity
                 .AddDefaultUI(Microsoft.AspNetCore.Identity.UI.UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<AspNetCoreIdentityContext>();
 
+            services.AddAuthorization(options =>
+           {
+               options.AddPolicy("PodeExcluir", configurePolicy: policy => policy.RequireClaim("PodeExcluir"));
+
+               options.AddPolicy("PodeLer", configurePolicy: policy => policy.Requirements.Add(new PermissaoNecessaria(permissao: "PodeLer")));
+               options.AddPolicy("PodeEscrever", configurePolicy: policy => policy.Requirements.Add(new PermissaoNecessaria(permissao: "PodeEscrever")));
+
+           });
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
