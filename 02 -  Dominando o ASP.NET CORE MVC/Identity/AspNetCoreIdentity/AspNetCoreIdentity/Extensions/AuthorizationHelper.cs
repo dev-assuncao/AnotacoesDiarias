@@ -15,7 +15,7 @@ namespace AspNetCoreIdentity.Extensions
     }
 
 
-    public class PermissãoNecessariaHandler : AuthorizationHandler<PermissaoNecessaria>
+    public class PermissaoNecessariaHandler : AuthorizationHandler<PermissaoNecessaria>
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissaoNecessaria requisito)
         {
