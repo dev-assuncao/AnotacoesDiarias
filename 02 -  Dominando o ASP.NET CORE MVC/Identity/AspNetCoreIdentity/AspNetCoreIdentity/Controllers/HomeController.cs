@@ -1,4 +1,5 @@
-﻿using AspNetCoreIdentity.Models;
+﻿using AspNetCoreIdentity.Extensions;
+using AspNetCoreIdentity.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -41,6 +42,13 @@ namespace AspNetCoreIdentity.Controllers
         public IActionResult SecretClaimEscrever()
         {
             return View("Secret");
+        }
+
+
+        [ClaimsAuthorize("Produtos", "Ler")]
+        public IActionResult ClaimsCustom()
+        {
+            return View("ClaimCustom");
         }
 
 
