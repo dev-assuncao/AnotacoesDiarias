@@ -50,11 +50,18 @@ namespace MinhaAPICore.Controllers
 
 
         // POST api/values
-        [HttpPost]
-        [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Product), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpPost]
+        //[ApiConventionMethod(typeof(DefaultApiConventions), 
+          //  nameof(DefaultApiConventions.Post))]
         public IActionResult Post([FromBody] Product product)
         {
+            if (product.Id == 0) return BadRequest();
+
+            //return Ok(product);
+
             return CreatedAtAction("Post", product);
 
         }
