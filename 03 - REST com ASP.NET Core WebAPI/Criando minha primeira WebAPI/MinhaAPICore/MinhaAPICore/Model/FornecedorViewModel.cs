@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dev_Assuncao.AppSite.Services
+namespace MinhaAPICore.Model
 {
-    public class OperacaoService
+    public class FornecedorViewModel
     {
     }
 }

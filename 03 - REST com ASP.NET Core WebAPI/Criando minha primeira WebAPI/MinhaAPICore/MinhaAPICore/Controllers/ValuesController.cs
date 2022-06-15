@@ -27,7 +27,7 @@ namespace MinhaAPICore.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet]  
         public ActionResult ObterResultado()
         {
             var valores = new string[] { "value1", "value2" };
